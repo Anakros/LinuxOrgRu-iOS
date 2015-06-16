@@ -10,6 +10,8 @@ target 'LinuxOrgRu' do
   pod 'JASidePanels', '~> 1.3.2'
   # BSD, debugger
   pod 'FLEX', '~> 2.0', :configurations => ['Debug']
+  # BSD, work with html
+  pod 'DTCoreText', '~> 1.6.15'
 end
 
 target 'LinuxOrgRuTests' do

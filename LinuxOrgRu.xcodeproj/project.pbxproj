@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D02947B1B2B7D03003E0307 /* LORTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02947A1B2B7D03003E0307 /* LORTrackerViewController.m */; };
+		2D247D0E1B2F436E00063E6B /* LORTrackerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D247D0D1B2F436E00063E6B /* LORTrackerViewCell.m */; };
 		2D36E20D1B2B791800BF2DF0 /* LORSidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D36E20C1B2B791800BF2DF0 /* LORSidePanelController.m */; };
 		2D6FB8A91B24C1520022DF20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FB8A81B24C1520022DF20 /* main.m */; };
 		2D6FB8AC1B24C1520022DF20 /* LORAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FB8AB1B24C1520022DF20 /* LORAppDelegate.m */; };
@@ -32,6 +33,8 @@
 		2D0294791B2B7D03003E0307 /* LORTrackerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LORTrackerViewController.h; path = ViewControllers/LORTrackerViewController.h; sourceTree = "<group>"; };
 		2D02947A1B2B7D03003E0307 /* LORTrackerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LORTrackerViewController.m; path = ViewControllers/LORTrackerViewController.m; sourceTree = "<group>"; };
 		2D02947C1B2B7E44003E0307 /* LOR-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LOR-Prefix.pch"; sourceTree = "<group>"; };
+		2D247D0C1B2F436E00063E6B /* LORTrackerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LORTrackerViewCell.h; path = UI/LORTrackerViewCell.h; sourceTree = "<group>"; };
+		2D247D0D1B2F436E00063E6B /* LORTrackerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LORTrackerViewCell.m; path = UI/LORTrackerViewCell.m; sourceTree = "<group>"; };
 		2D36E20B1B2B791800BF2DF0 /* LORSidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LORSidePanelController.h; path = ViewControllers/LORSidePanelController.h; sourceTree = "<group>"; };
 		2D36E20C1B2B791800BF2DF0 /* LORSidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LORSidePanelController.m; path = ViewControllers/LORSidePanelController.m; sourceTree = "<group>"; };
 		2D6FB8A31B24C1520022DF20 /* LinuxOrgRu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinuxOrgRu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D247D0B1B2F433D00063E6B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2D247D0C1B2F436E00063E6B /* LORTrackerViewCell.h */,
+				2D247D0D1B2F436E00063E6B /* LORTrackerViewCell.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		2D67A6771B289D4B002E119E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +115,7 @@
 		2D6FB8A51B24C1520022DF20 /* LinuxOrgRu */ = {
 			isa = PBXGroup;
 			children = (
+				2D247D0B1B2F433D00063E6B /* UI */,
 				2D67A6771B289D4B002E119E /* ViewControllers */,
 				2D6FB8AA1B24C1520022DF20 /* LORAppDelegate.h */,
 				2D6FB8AB1B24C1520022DF20 /* LORAppDelegate.m */,
@@ -294,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D247D0E1B2F436E00063E6B /* LORTrackerViewCell.m in Sources */,
 				2D36E20D1B2B791800BF2DF0 /* LORSidePanelController.m in Sources */,
 				2D02947B1B2B7D03003E0307 /* LORTrackerViewController.m in Sources */,
 				2D6FB8AC1B24C1520022DF20 /* LORAppDelegate.m in Sources */,

@@ -8,6 +8,9 @@
 
 #import "LORTrackerViewController.h"
 #import "LORSidePanelController.h"
+#import "LORTrackerViewCell.h"
+
+#import "DTCoreText.h"
 
 @interface LORTrackerViewController ()
 @property(nonatomic, strong) NSArray *trackerItems;
@@ -17,6 +20,9 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+
+  self.tableView.rowHeight = UITableViewAutomaticDimension;
+  self.tableView.estimatedRowHeight = 92.0;
 
   self.refreshControl = [[UIRefreshControl alloc] init];
   [self.refreshControl addTarget:self
@@ -57,12 +63,35 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  UITableViewCell *cell =
+  LORTrackerViewCell *cell =
       [tableView dequeueReusableCellWithIdentifier:@"TrackerItem" forIndexPath:indexPath];
   NSDictionary *trackerItem = _trackerItems[indexPath.row];
 
-  [cell.textLabel setText:trackerItem[@"title"]];
-  [cell.detailTextLabel setText:trackerItem[@"url"]];
+  [cell.title setText:[trackerItem[@"title"] stringByReplacingHTMLEntities]];
+  NSMutableAttributedString *groupAndTagsString = [[NSMutableAttributedString alloc]
+      initWithString:[NSString
+                         stringWithFormat:@"%@  %@", trackerItem[@"groupTitle"],
+                                          [trackerItem[@"tags"] componentsJoinedByString:@", "]]];
+  [groupAndTagsString addAttributes:@{
+    NSForegroundColorAttributeName : [UIColor whiteColor]
+  } range:NSMakeRange(0, [trackerItem[@"groupTitle"] length] - 1)];
+  [groupAndTagsString addAttributes:@{
+    NSForegroundColorAttributeName :
+        [UIColor colorWithRed:252.0 / 255.0 green:175.0 / 255.0 blue:62.0 / 255.0 alpha:1.0]
+  } range:NSMakeRange([trackerItem[@"groupTitle"] length] + 2,
+                      [[trackerItem[@"tags"] componentsJoinedByString:@", "] length])];
+
+  [cell.groupAndTags setAttributedText:groupAndTagsString];
+
+  [cell.author setText:trackerItem[@"author"]];
+  NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+  [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+  NSDate *lastModified = [dateFormat dateFromString:trackerItem[@"lastModified"]];
+  [dateFormat setDateFormat:@"dd.MM.yy HH:mm"];
+
+  [cell.date setText:[dateFormat stringFromDate:lastModified]];
+
+  [cell layoutIfNeeded];
 
   return cell;
 }
