@@ -11,7 +11,10 @@
 @implementation LORTrackerViewCell
 
 - (void)awakeFromNib {
-  // Initialization code
+  UIView *bgColorView = [[UIView alloc] init];
+  bgColorView.backgroundColor =
+      [UIColor colorWithRed:92.0 / 255.0 green:53.0 / 255.0 blue:102.0 / 255.0 alpha:1.0];
+  self.selectedBackgroundView = bgColorView;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
