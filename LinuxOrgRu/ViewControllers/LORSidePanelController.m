@@ -26,7 +26,7 @@
 
 - (void)awakeFromNib {
   UIViewController *centerViewController =
-      [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
+      [self.storyboard instantiateViewControllerWithIdentifier:@"TrackerNav"];
   UIViewController *leftViewController =
       [self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"];
 
