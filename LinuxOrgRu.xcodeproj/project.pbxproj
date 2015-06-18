@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		2D3677261B32ED00002871C3 /* OCLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2D3677291B32ED00002871C3 /* Build configuration list for PBXAggregateTarget "OCLint" */;
+			buildPhases = (
+				2D36772A1B32ED15002871C3 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = OCLint;
+			productName = OCLint;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		2D02947B1B2B7D03003E0307 /* LORTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02947A1B2B7D03003E0307 /* LORTrackerViewController.m */; };
 		2D247D0E1B2F436E00063E6B /* LORTrackerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D247D0D1B2F436E00063E6B /* LORTrackerViewCell.m */; };
@@ -231,8 +245,12 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Anakros;
 				TargetAttributes = {
+					2D3677261B32ED00002871C3 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
 					2D6FB8A21B24C1520022DF20 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = LZ967P76KF;
 					};
 					2D6FB8BB1B24C1520022DF20 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -255,6 +273,7 @@
 			targets = (
 				2D6FB8A21B24C1520022DF20 /* LinuxOrgRu */,
 				2D6FB8BB1B24C1520022DF20 /* LinuxOrgRuTests */,
+				2D3677261B32ED00002871C3 /* OCLint */,
 			);
 		};
 /* End PBXProject section */
@@ -280,6 +299,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2D36772A1B32ED15002871C3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source ~/.bash_profile\nXCTOOL=/usr/local/bin/xctool\nOCLINT_C_DB=/usr/local/bin/oclint-json-compilation-database\n\n\ncd ${SRCROOT}\n$XCTOOL -reporter json-compilation-database:compile_commands.json clean build\n$OCLINT_C_DB -e Pods";
+		};
 		C21237F87C2A4AB486D11420 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,6 +397,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2D3677271B32ED00002871C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2D3677281B32ED00002871C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		2D6FB8C41B24C1520022DF20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -453,6 +499,7 @@
 			baseConfigurationReference = 3B8E543ED42BF22D53C61C01 /* Pods-LinuxOrgRu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LinuxOrgRu/LOR-Prefix.pch";
 				INFOPLIST_FILE = LinuxOrgRu/Info.plist;
@@ -469,6 +516,7 @@
 			baseConfigurationReference = 5C946A542F3732A4E229BA3D /* Pods-LinuxOrgRu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LinuxOrgRu/LOR-Prefix.pch";
 				INFOPLIST_FILE = LinuxOrgRu/Info.plist;
@@ -519,6 +567,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2D3677291B32ED00002871C3 /* Build configuration list for PBXAggregateTarget "OCLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D3677271B32ED00002871C3 /* Debug */,
+				2D3677281B32ED00002871C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		2D6FB89E1B24C1520022DF20 /* Build configuration list for PBXProject "LinuxOrgRu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
