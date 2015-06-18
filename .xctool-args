@@ -1,0 +1,5 @@
+[
+  "-workspace", "LinuxOrgRu.xcworkspace",
+  "-scheme", "LinuxOrgRu",
+  "-sdk", "iphonesimulator"
+]
