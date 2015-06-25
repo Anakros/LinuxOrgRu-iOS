@@ -9,4 +9,3 @@
 #import "LORAppDelegate.h"
 #define AppDelegate ((LORAppDelegate *)[[UIApplication sharedApplication] delegate])
 #import "AFNetworking.h"
-#import "UIViewController+JASidePanel.h"

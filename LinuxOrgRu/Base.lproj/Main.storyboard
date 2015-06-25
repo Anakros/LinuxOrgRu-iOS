@@ -135,6 +135,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="447"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.1529411765" green="0.17254901959999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection id="KgK-aN-oTw">
                                 <cells>
@@ -284,12 +285,54 @@
                                         <constraint firstItem="QCO-Mp-VWc" firstAttribute="top" secondItem="cmc-iH-tz5" secondAttribute="bottom" constant="6" id="ztp-Cb-VIf"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="author" destination="tW8-99-8Qn" id="bI3-9e-34Z"/>
                                     <outlet property="date" destination="571-MM-xhH" id="xDd-br-sqX"/>
                                     <outlet property="groupAndTags" destination="QCO-Mp-VWc" id="znJ-Vb-cIQ"/>
                                     <outlet property="title" destination="cmc-iH-tz5" id="wso-V6-eRH"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadMore" rowHeight="92" id="MYc-hF-U3f" customClass="LORTrackerLoadMoreCell">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MYc-hF-U3f" id="1c8-ce-9gr">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Load more" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHk-8x-TDo">
+                                            <rect key="frame" x="259" y="12" width="83" height="67"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="KIF-ET-vpv">
+                                            <rect key="frame" x="231" y="36" width="20" height="20"/>
+                                            <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </activityIndicatorView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reload" translatesAutoresizingMaskIntoConstraints="NO" id="sjo-gZ-49h">
+                                            <rect key="frame" x="278" y="22" width="45" height="45"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="NGV-vO-zqT"/>
+                                                <constraint firstAttribute="width" constant="45" id="QgI-9M-qO6"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.1529411765" green="0.17254901959999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="centerX" secondItem="vHk-8x-TDo" secondAttribute="centerX" constant="-0.5" id="60d-dm-mzN"/>
+                                        <constraint firstItem="vHk-8x-TDo" firstAttribute="centerY" secondItem="KIF-ET-vpv" secondAttribute="centerY" constant="-0.5" id="GtV-eT-WTL"/>
+                                        <constraint firstItem="vHk-8x-TDo" firstAttribute="top" secondItem="1c8-ce-9gr" secondAttribute="topMargin" constant="4" id="JYX-x9-JzT"/>
+                                        <constraint firstItem="vHk-8x-TDo" firstAttribute="leading" secondItem="KIF-ET-vpv" secondAttribute="trailing" constant="8" id="STm-h4-jav"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="vHk-8x-TDo" secondAttribute="bottom" constant="4" id="Tjb-ri-NbK"/>
+                                        <constraint firstItem="sjo-gZ-49h" firstAttribute="top" secondItem="1c8-ce-9gr" secondAttribute="topMargin" constant="14" id="bAO-VD-ocU"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="sjo-gZ-49h" secondAttribute="bottom" constant="16" id="jYh-Ku-Xej"/>
+                                        <constraint firstAttribute="centerX" secondItem="sjo-gZ-49h" secondAttribute="centerX" id="wsT-E7-wPm"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="loadingIndicator" destination="KIF-ET-vpv" id="FoM-hX-nrg"/>
+                                    <outlet property="reloadImage" destination="sjo-gZ-49h" id="tef-oi-DFQ"/>
+                                    <outlet property="title" destination="vHk-8x-TDo" id="Dx1-AR-KQf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -333,6 +376,7 @@
     </scenes>
     <resources>
         <image name="Hamburger menu" width="36" height="22"/>
+        <image name="Reload" width="22" height="23"/>
         <image name="Wrench" width="24" height="22"/>
     </resources>
 </document>

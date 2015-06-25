@@ -22,10 +22,12 @@
 
 /* Begin PBXBuildFile section */
 		2D02947B1B2B7D03003E0307 /* LORTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02947A1B2B7D03003E0307 /* LORTrackerViewController.m */; };
+		2D23BFCE1B3C727C004E8AF3 /* LORUIImage+Overlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D23BFCD1B3C727C004E8AF3 /* LORUIImage+Overlay.m */; };
 		2D247D0E1B2F436E00063E6B /* LORTrackerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D247D0D1B2F436E00063E6B /* LORTrackerViewCell.m */; };
 		2D36E20D1B2B791800BF2DF0 /* LORSidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D36E20C1B2B791800BF2DF0 /* LORSidePanelController.m */; };
 		2D5D1EAE1B3085AF0005B6F3 /* LORLeftMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D1EAD1B3085AF0005B6F3 /* LORLeftMenuTableViewController.m */; };
 		2D5D1EB11B30906C0005B6F3 /* LORLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D1EB01B30906C0005B6F3 /* LORLeftMenuViewController.m */; };
+		2D5D1EB41B30B73D0005B6F3 /* LORTrackerLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D1EB31B30B73D0005B6F3 /* LORTrackerLoadMoreCell.m */; };
 		2D6FB8A91B24C1520022DF20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FB8A81B24C1520022DF20 /* main.m */; };
 		2D6FB8AC1B24C1520022DF20 /* LORAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FB8AB1B24C1520022DF20 /* LORAppDelegate.m */; };
 		2D6FB8B21B24C1520022DF20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6FB8B01B24C1520022DF20 /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		2D0294791B2B7D03003E0307 /* LORTrackerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LORTrackerViewController.h; path = ViewControllers/LORTrackerViewController.h; sourceTree = "<group>"; };
 		2D02947A1B2B7D03003E0307 /* LORTrackerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LORTrackerViewController.m; path = ViewControllers/LORTrackerViewController.m; sourceTree = "<group>"; };
 		2D02947C1B2B7E44003E0307 /* LOR-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LOR-Prefix.pch"; sourceTree = "<group>"; };
+		2D23BFCC1B3C727C004E8AF3 /* LORUIImage+Overlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LORUIImage+Overlay.h"; path = "Categories/LORUIImage+Overlay.h"; sourceTree = "<group>"; };
+		2D23BFCD1B3C727C004E8AF3 /* LORUIImage+Overlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LORUIImage+Overlay.m"; path = "Categories/LORUIImage+Overlay.m"; sourceTree = "<group>"; };
 		2D247D0C1B2F436E00063E6B /* LORTrackerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LORTrackerViewCell.h; path = UI/LORTrackerViewCell.h; sourceTree = "<group>"; };
 		2D247D0D1B2F436E00063E6B /* LORTrackerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LORTrackerViewCell.m; path = UI/LORTrackerViewCell.m; sourceTree = "<group>"; };
 		2D36E20B1B2B791800BF2DF0 /* LORSidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LORSidePanelController.h; path = ViewControllers/LORSidePanelController.h; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 		2D5D1EAD1B3085AF0005B6F3 /* LORLeftMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LORLeftMenuTableViewController.m; path = ViewControllers/LORLeftMenuTableViewController.m; sourceTree = "<group>"; };
 		2D5D1EAF1B30906C0005B6F3 /* LORLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LORLeftMenuViewController.h; path = ViewControllers/LORLeftMenuViewController.h; sourceTree = "<group>"; };
 		2D5D1EB01B30906C0005B6F3 /* LORLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LORLeftMenuViewController.m; path = ViewControllers/LORLeftMenuViewController.m; sourceTree = "<group>"; };
+		2D5D1EB21B30B73D0005B6F3 /* LORTrackerLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LORTrackerLoadMoreCell.h; path = UI/LORTrackerLoadMoreCell.h; sourceTree = "<group>"; };
+		2D5D1EB31B30B73D0005B6F3 /* LORTrackerLoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LORTrackerLoadMoreCell.m; path = UI/LORTrackerLoadMoreCell.m; sourceTree = "<group>"; };
 		2D6FB8A31B24C1520022DF20 /* LinuxOrgRu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinuxOrgRu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6FB8A71B24C1520022DF20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D6FB8A81B24C1520022DF20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -92,11 +98,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D23BFCB1B3C7217004E8AF3 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2D23BFCC1B3C727C004E8AF3 /* LORUIImage+Overlay.h */,
+				2D23BFCD1B3C727C004E8AF3 /* LORUIImage+Overlay.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		2D247D0B1B2F433D00063E6B /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				2D247D0C1B2F436E00063E6B /* LORTrackerViewCell.h */,
 				2D247D0D1B2F436E00063E6B /* LORTrackerViewCell.m */,
+				2D5D1EB21B30B73D0005B6F3 /* LORTrackerLoadMoreCell.h */,
+				2D5D1EB31B30B73D0005B6F3 /* LORTrackerLoadMoreCell.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -139,6 +156,7 @@
 		2D6FB8A51B24C1520022DF20 /* LinuxOrgRu */ = {
 			isa = PBXGroup;
 			children = (
+				2D23BFCB1B3C7217004E8AF3 /* Categories */,
 				2D247D0B1B2F433D00063E6B /* UI */,
 				2D67A6771B289D4B002E119E /* ViewControllers */,
 				2D6FB8AA1B24C1520022DF20 /* LORAppDelegate.h */,
@@ -356,6 +374,8 @@
 				2D02947B1B2B7D03003E0307 /* LORTrackerViewController.m in Sources */,
 				2D6FB8AC1B24C1520022DF20 /* LORAppDelegate.m in Sources */,
 				2D6FB8A91B24C1520022DF20 /* main.m in Sources */,
+				2D23BFCE1B3C727C004E8AF3 /* LORUIImage+Overlay.m in Sources */,
+				2D5D1EB41B30B73D0005B6F3 /* LORTrackerLoadMoreCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +594,7 @@
 				2D3677281B32ED00002871C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2D6FB89E1B24C1520022DF20 /* Build configuration list for PBXProject "LinuxOrgRu" */ = {
 			isa = XCConfigurationList;
