@@ -17,6 +17,10 @@
   self.selectedBackgroundView = bgColorView;
 }
 
+- (void)prepareForReuse {
+  [self layoutIfNeeded];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
   [super setSelected:selected animated:animated];
 

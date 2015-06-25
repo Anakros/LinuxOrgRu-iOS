@@ -86,22 +86,19 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   if (_trackerItems.count > 0) {
     return self.didReachedEnd ? 1 : 2;
-  } else {
-    return 1;
   }
+
+  return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   switch (section) {
   case 0:
     return [_trackerItems count];
-    break;
   case 1:
     return _trackerItems.count > 0 ? 1 : 0;
-    break;
   default:
     return 0;
-    break;
   }
 }
 
@@ -120,15 +117,12 @@
                                             [trackerItem[@"tags"] componentsJoinedByString:@", "]]];
     [groupAndTagsString addAttributes:@{
       NSForegroundColorAttributeName : [UIColor whiteColor]
-    }
-                                range:NSMakeRange(0, [trackerItem[@"groupTitle"] length] - 1)];
-    [groupAndTagsString
-        addAttributes:@{
-          NSForegroundColorAttributeName :
-              [UIColor colorWithRed:252.0 / 255.0 green:175.0 / 255.0 blue:62.0 / 255.0 alpha:1.0]
-        }
-                range:NSMakeRange([trackerItem[@"groupTitle"] length] + 2,
-                                  [[trackerItem[@"tags"] componentsJoinedByString:@", "] length])];
+    } range:NSMakeRange(0, [trackerItem[@"groupTitle"] length] - 1)];
+    [groupAndTagsString addAttributes:@{
+      NSForegroundColorAttributeName :
+          [UIColor colorWithRed:252.0 / 255.0 green:175.0 / 255.0 blue:62.0 / 255.0 alpha:1.0]
+    } range:NSMakeRange([trackerItem[@"groupTitle"] length] + 2,
+                        [[trackerItem[@"tags"] componentsJoinedByString:@", "] length])];
 
     [cell.groupAndTags setAttributedText:groupAndTagsString];
 
@@ -141,17 +135,17 @@
     [cell.date setText:[dateFormat stringFromDate:lastModified]];
 
     return cell;
-  } break;
+  }
   case 1: {
     UITableViewCell *cell =
         [tableView dequeueReusableCellWithIdentifier:@"LoadMore" forIndexPath:indexPath];
 
     return cell;
-  } break;
+  }
   default: {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@""];
     return cell;
-  } break;
+  }
   }
 }
 

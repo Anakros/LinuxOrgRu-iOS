@@ -36,7 +36,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqualToString:@"embedLeftMenuTable"]) {
-    _tableViewController = segue.destinationViewController;
+    self.tableViewController = segue.destinationViewController;
   }
 }
 
