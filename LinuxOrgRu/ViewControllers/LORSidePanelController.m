@@ -1,11 +1,3 @@
-//
-//  LORSidePanelController.m
-//  LinuxOrgRu
-//
-//  Created by Anakros on 6/13/15.
-//  Copyright © 2015 Anakros. All rights reserved.
-//
-
 #import "LORSidePanelController.h"
 
 @interface LORSidePanelController ()

@@ -1,11 +1,3 @@
-//
-//  LOR-Prefix.pch
-//  LinuxOrgRu
-//
-//  Created by Anakros on 6/13/15.
-//  Copyright © 2015 Anakros. All rights reserved.
-//
-
 #import "LORAppDelegate.h"
 #define AppDelegate ((LORAppDelegate *)[[UIApplication sharedApplication] delegate])
 #import "AFNetworking.h"

@@ -1,11 +1,3 @@
-//
-//  LORLeftMenuViewController.m
-//  LinuxOrgRu
-//
-//  Created by Alexey on 6/16/15.
-//  Copyright (c) 2015 Anakros. All rights reserved.
-//
-
 #import "LORLeftMenuViewController.h"
 
 @interface LORLeftMenuViewController ()
