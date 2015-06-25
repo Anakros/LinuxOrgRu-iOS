@@ -12,7 +12,7 @@
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 #if DEBUG
-  [[FLEXManager sharedManager] showExplorer];
+  //  [[FLEXManager sharedManager] showExplorer];
   [[FLEXManager sharedManager] setNetworkDebuggingEnabled:YES];
 #endif
   return YES;

@@ -7,7 +7,6 @@
 
 @interface LORTrackerViewController ()
 @property(nonatomic, strong) NSArray *trackerItems;
-@property BOOL loading;
 @property BOOL didReachedEnd;
 @end
 
@@ -16,7 +15,6 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  self.loading = NO;
   self.didReachedEnd = NO;
 
   self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -24,19 +22,23 @@
   self.tableView.separatorColor = [UIColor whiteColor];
 
   self.refreshControl = [[UIRefreshControl alloc] init];
+  self.refreshControl.tintColor = [UIColor whiteColor];
   [self.refreshControl addTarget:self
                           action:@selector(refreshControlPulled)
                 forControlEvents:UIControlEventValueChanged];
-
-  [self loadDataWithOffset:0];
 }
 
-- (void)loadDataWithOffset:(NSUInteger)offset {
-  if (_loading) {
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  [self loadDataWithOffset:0 sender:self];
+}
+
+- (void)loadDataWithOffset:(NSUInteger)offset sender:(id)sender {
+  if (self.refreshControl.refreshing && ![sender isKindOfClass:[UIRefreshControl class]]) {
     return;
   }
 
-  self.loading = YES;
+  [self.refreshControl beginRefreshing];
 
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
   [manager GET:@"https://www.linux.org.ru/api/tracker"
@@ -46,6 +48,7 @@
       }
       success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *trackerItems = responseObject[@"trackerItems"];
+
         if (trackerItems.count == 0) {
           self.didReachedEnd = YES;
         } else {
@@ -54,6 +57,13 @@
                 [_trackerItems arrayByAddingObjectsFromArray:responseObject[@"trackerItems"]];
           } else {
             self.trackerItems = responseObject[@"trackerItems"];
+
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"MMM d, h:mm a"];
+            self.refreshControl.attributedTitle = [[NSAttributedString alloc]
+                initWithString:[NSString stringWithFormat:@"Last update: %@",
+                                                          [formatter stringFromDate:[NSDate date]]]
+                    attributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
           }
 
           self.didReachedEnd = NO;
@@ -61,11 +71,10 @@
 
         [self.refreshControl endRefreshing];
         [self.tableView reloadData];
-        self.loading = NO;
       }
       failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failed to fetch tracker data: %@", error);
-        self.loading = NO;
+        [self.refreshControl endRefreshing];
       }];
 }
 
@@ -147,7 +156,7 @@
   UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
 
   if ([cell.reuseIdentifier isEqualToString:@"LoadMore"]) {
-    [self loadDataWithOffset:_trackerItems.count];
+    [self loadDataWithOffset:_trackerItems.count sender:self];
   }
 }
 
@@ -158,7 +167,7 @@
 }
 
 - (void)refreshControlPulled {
-  [self loadDataWithOffset:0];
+  [self loadDataWithOffset:0 sender:self.refreshControl];
 }
 
 @end
