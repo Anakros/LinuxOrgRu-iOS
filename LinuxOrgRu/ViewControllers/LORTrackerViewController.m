@@ -2,8 +2,7 @@
 #import "LORSidePanelController.h"
 #import "LORTrackerViewCell.h"
 #import "LORTrackerLoadMoreCell.h"
-
-#import "DTCoreText.h"
+#import "LORTrackerItem.h"
 
 @interface LORTrackerViewController ()
 @property(nonatomic, strong) NSArray *trackerItems;
@@ -109,31 +108,11 @@
   case 0: {
     LORTrackerViewCell *cell =
         [tableView dequeueReusableCellWithIdentifier:@"TrackerItem" forIndexPath:indexPath];
-    NSDictionary *trackerItem = _trackerItems[indexPath.row];
-
-    [cell.title setText:[trackerItem[@"title"] stringByReplacingHTMLEntities]];
-    NSMutableAttributedString *groupAndTagsString = [[NSMutableAttributedString alloc]
-        initWithString:[NSString
-                           stringWithFormat:@"%@  %@", trackerItem[@"groupTitle"],
-                                            [trackerItem[@"tags"] componentsJoinedByString:@", "]]];
-    [groupAndTagsString addAttributes:@{
-      NSForegroundColorAttributeName : [UIColor whiteColor]
-    } range:NSMakeRange(0, [trackerItem[@"groupTitle"] length] - 1)];
-    [groupAndTagsString addAttributes:@{
-      NSForegroundColorAttributeName :
-          [UIColor colorWithRed:252.0 / 255.0 green:175.0 / 255.0 blue:62.0 / 255.0 alpha:1.0]
-    } range:NSMakeRange([trackerItem[@"groupTitle"] length] + 2,
-                        [[trackerItem[@"tags"] componentsJoinedByString:@", "] length])];
-
-    [cell.groupAndTags setAttributedText:groupAndTagsString];
-
-    [cell.author setText:trackerItem[@"lastCommentedBy"]];
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
-    NSDate *lastModified = [dateFormat dateFromString:trackerItem[@"lastModified"]];
-    [dateFormat setDateFormat:@"dd.MM.yy HH:mm"];
-
-    [cell.date setText:[dateFormat stringFromDate:lastModified]];
+    NSDictionary *jsonDictionary = _trackerItems[indexPath.row];
+    LORTrackerItem *item = [MTLJSONAdapter modelOfClass:LORTrackerItem.class
+                                     fromJSONDictionary:jsonDictionary
+                                                  error:nil];
+    [cell configureWithModel:item];
 
     return cell;
   }

@@ -5,7 +5,7 @@ target 'LinuxOrgRu' do
   # MIT, networking library
   pod 'AFNetworking', '~> 2.5.4'
   # MIT, model framework
-  # pod 'Mantle', '~> 2.0.2'
+  pod 'Mantle', '~> 2.0.2'
   # MIT, side menu
   pod 'JASidePanels', '~> 1.3.2'
   # BSD, debugger
