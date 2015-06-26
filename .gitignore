@@ -30,3 +30,4 @@ Pods/
 
 # static analysis
 compile_commands.json
+infer-out

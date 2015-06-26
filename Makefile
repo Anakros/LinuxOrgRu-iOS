@@ -1,8 +1,12 @@
 SRCROOT=LinuxOrgRu
 TESTSROOT=LinuxOrgRuTests
 PODSROOT=Pods
+WORKSPACE=LinuxOrgRu
+SCHEME=LinuxOrgRu
 
 XCTOOL_REPORTER=-reporter json-compilation-database:compile_commands.json
+XCODEBUILD=xcodebuild -workspace $(WORKSPACE).xcworkspace -scheme $(SCHEME) -configuration Debug -sdk iphonesimulator
+
 
 format:
 	find $(SRCROOT) $(TESTSROOT) -name '*.m' -o -name '*.h' | xargs clang-format -i
@@ -13,3 +17,6 @@ static-analysis:
 
 clean:
 	xctool clean
+
+infer:
+	infer -i -- $(XCODEBUILD)
