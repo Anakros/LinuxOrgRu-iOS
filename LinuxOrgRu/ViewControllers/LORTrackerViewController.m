@@ -2,6 +2,7 @@
 #import "LORSidePanelController.h"
 #import "LORTrackerViewCell.h"
 #import "LORTrackerLoadMoreCell.h"
+#import "Configuration.h"
 #import "LORTrackerItem.h"
 
 @interface LORTrackerViewController ()
@@ -40,7 +41,7 @@
   [self.refreshControl beginRefreshing];
 
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-  [manager GET:@"https://www.linux.org.ru/api/tracker"
+  [manager GET:[NSString stringWithFormat:@"%@/tracker", LOR_Keys_Server]
       parameters:@{
         @"filter" : @"all",
         @"offset" : @(offset)

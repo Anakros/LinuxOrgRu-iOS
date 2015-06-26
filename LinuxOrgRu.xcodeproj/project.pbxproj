@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		2D02947B1B2B7D03003E0307 /* LORTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02947A1B2B7D03003E0307 /* LORTrackerViewController.m */; };
+		2D1A5A951B3DE31000C70BE2 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A5A941B3DE31000C70BE2 /* Configuration.m */; };
 		2D1A5A991B3DE6C600C70BE2 /* LORTrackerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A5A981B3DE6C600C70BE2 /* LORTrackerItem.m */; };
 		2D23BFCE1B3C727C004E8AF3 /* LORUIImage+Overlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D23BFCD1B3C727C004E8AF3 /* LORUIImage+Overlay.m */; };
 		2D247D0E1B2F436E00063E6B /* LORTrackerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D247D0D1B2F436E00063E6B /* LORTrackerViewCell.m */; };
@@ -52,6 +53,8 @@
 		2D0294791B2B7D03003E0307 /* LORTrackerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LORTrackerViewController.h; path = ViewControllers/LORTrackerViewController.h; sourceTree = "<group>"; };
 		2D02947A1B2B7D03003E0307 /* LORTrackerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LORTrackerViewController.m; path = ViewControllers/LORTrackerViewController.m; sourceTree = "<group>"; };
 		2D02947C1B2B7E44003E0307 /* LOR-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LOR-Prefix.pch"; sourceTree = "<group>"; };
+		2D1A5A931B3DE22D00C70BE2 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		2D1A5A941B3DE31000C70BE2 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		2D1A5A971B3DE6C600C70BE2 /* LORTrackerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LORTrackerItem.h; path = Models/LORTrackerItem.h; sourceTree = "<group>"; };
 		2D1A5A981B3DE6C600C70BE2 /* LORTrackerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LORTrackerItem.m; path = Models/LORTrackerItem.m; sourceTree = "<group>"; };
 		2D23BFCC1B3C727C004E8AF3 /* LORUIImage+Overlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LORUIImage+Overlay.h"; path = "Categories/LORUIImage+Overlay.h"; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				2D6FB8B51B24C1520022DF20 /* LaunchScreen.xib */,
 				2D6FB8A61B24C1520022DF20 /* Supporting Files */,
 				2D02947C1B2B7E44003E0307 /* LOR-Prefix.pch */,
+				2D1A5A931B3DE22D00C70BE2 /* Configuration.h */,
+				2D1A5A941B3DE31000C70BE2 /* Configuration.m */,
 			);
 			path = LinuxOrgRu;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D1A5A951B3DE31000C70BE2 /* Configuration.m in Sources */,
 				2D5D1EAE1B3085AF0005B6F3 /* LORLeftMenuTableViewController.m in Sources */,
 				2D247D0E1B2F436E00063E6B /* LORTrackerViewCell.m in Sources */,
 				2D36E20D1B2B791800BF2DF0 /* LORSidePanelController.m in Sources */,
